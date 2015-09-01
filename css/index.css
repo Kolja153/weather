@@ -1,0 +1,25 @@
+body {
+	background-image: url(/img/background.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.title-page{
+	text-align: center;
+	color: white;
+	margin-bottom: 5%;
+}
+
+.global-box {
+	 width: 600px ;
+	 margin-left: auto ;
+	 margin-right: auto ;
+}
+
+.weather-box{
+	background-color: rgba(255, 255, 255, 0.59);
+	height: 300px;
+	width:  600px;
+	margin: auto;
+	margin-top: 5%;
+	border-radius: 5px;
+}
