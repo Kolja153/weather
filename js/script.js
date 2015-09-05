@@ -12,7 +12,7 @@ $(function(){
     });    
     
     getWeatherData('ua', dataReceived, showError);
-    
+      var end=0;
 
     function dataReceived(data) {
         var offset = (new Date()).getTimezoneOffset()*60*1000; // Відхилення від UTC в секундах
@@ -33,17 +33,55 @@ $(function(){
         $('#location').html('<b>'+city + '</b>'); // Додаємо локацію на сторінку
     }
 
+    
     function addWeather(icon, day, condition, temp){
-        var markup = 
+        $(function(){
+             var markup = 
              '<td>' + '<img src="img/icons/'+icon+'.png" />' + '</td>'+
-             '<td>' +  '<span class="day"> Сьогодні &nbsp' + day + '</span><br>'+ 
-                '<span class="temp"> Температура &nbsp' + temp + '</span><br>' +
-                '<span class="condition"> На небі &nbsp' + condition + '</span>' + '</td>';
+             '<td>' + '<span class="day after"> Сьогодні ' + day + '</span><br>'+ 
+                '<span class="temp after"> Температура s' + temp + '</span><br>' +
+                '<span class="condition after"> На небі ' + condition + '</span>' + '</td>';
                 ;
-        weather.innerHTML = markup; 
+            weather.innerHTML = markup; 
+          
+
+             if (end==0) {
+               zamina('.day','Сьогодні ',day);
+
+               };
+
+
+             if (end==1) {
+              zamina('.temp','Температура ',temp);
+              
+              };
+                 
+            
+            });
     }
 
     function showError(msg){
         $('#error').html('Сталася помилка: ' + msg);
-    }
+    } 
+
+    function zamina (element,title,data){
+         
+        var a = new String;
+            a =  title + data ;
+             
+            $(element ).text('');
+        var c=a.length;
+            j=0;
+        setInterval(function(){
+            if(j<c){
+               
+               $(element).text($(element ).text()+a[j]);
+               j=j+1; 
+                 } 
+            else {$(element).removeClass('after')} 
+                
+                },100);
+end=end+1;
+            }
+   
 });

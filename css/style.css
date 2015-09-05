@@ -1,5 +1,5 @@
 body {
-	background-image: url(/weather/img/background.jpg);
+	background-image: url(/img/background.jpg);
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -50,3 +50,5 @@ label{
 	font-size: 20px;
 	line-height: 2;
 }
+
+.after:after {content:'_'}
