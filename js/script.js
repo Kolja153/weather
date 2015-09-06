@@ -25,63 +25,51 @@ $(function(){
             var localTime = new Date(this.dt*1000 - offset); // конвертуємо час з UTC у локальний
             addWeather(
                 this.weather[0].icon,
-                moment(localTime).format('l'),	// Використовуємо moment.js для представлення дати
+                moment(localTime).format('ll'),	// Використовуємо moment.js для представлення дати
                 this.weather[0].description,
-                Math.round(this.temp.day) + '&deg;C'
+                Math.round(this.temp.day)
             );
         });
-        $('#location').html('<b>'+city + '</b>'); // Додаємо локацію на сторінку
+        $('#location').html('<b>'+city + '</b>');
+         // Додаємо локацію на сторінку
     }
 
     
-    function addWeather(icon, day, condition, temp){
-        $(function(){
-             var markup = 
-             '<td>' + '<img src="img/icons/'+icon+'.png" />' + '</td>'+
-             '<td>' + '<span class="day after"> Сьогодні ' + day + '</span><br>'+ 
-                '<span class="temp after"> Температура s' + temp + '</span><br>' +
-                '<span class="condition after"> На небі ' + condition + '</span>' + '</td>';
-                ;
-            weather.innerHTML = markup; 
-          
+     function addWeather(icon, day, condition, temp){
+         var markup =
+         '<td>' + '<img src="img/icons/'+icon+'.png" />' + '</td>'+
+         '<td class="td">' + '<span class="day after"></span><br>'+
+            '<span class="temp after"> </span>&#176C;<br>' +
+            '<span class="condition after"></span>'+'</td>'
+             
 
-             if (end==0) {
-               zamina('.day','Сьогодні ',day);
-
-               };
-
-
-             if (end==1) {
-              zamina('.temp','Температура ',temp);
-              
-              };
-                 
-            
-            });
+         weather.innerHTML = markup;
+         animatedText('.day', 'Сьогодні:  ' + day);
+         animatedText('.temp', 'Температура: ' + temp);
+         animatedText('.condition', 'На вулиці:  ' + condition);
     }
+    
+    function animatedText(el, text) {
+        if (!text) { // Recursion exit condition
+            $(el).removeClass('after');
+            $(el).append(text);
+            return; 
+        }
+        $(el).append(text[0]);
+        setTimeout(function () {
+            animatedText(el, text.slice(1));
+        }, 150);
+    }
+
 
     function showError(msg){
         $('#error').html('Сталася помилка: ' + msg);
     } 
 
-    function zamina (element,title,data){
-         
-        var a = new String;
-            a =  title + data ;
-             
-            $(element ).text('');
-        var c=a.length;
-            j=0;
-        setInterval(function(){
-            if(j<c){
-               
-               $(element).text($(element ).text()+a[j]);
-               j=j+1; 
-                 } 
-            else {$(element).removeClass('after')} 
-                
-                },100);
-end=end+1;
-            }
+    
+        
+   
+
+      
    
 });

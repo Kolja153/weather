@@ -4,38 +4,52 @@
    <title> Погодний сайт</title>
    <meta charset="utf-8">
     <link href="css/style.css" rel="stylesheet">
-   <link rel="stylesheet"href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-   
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"  integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
  </head>
+<!--  Head  -->
  <body>
-   <div class="title-page">
-   	<h1>Погода в місті 
-   	   <span id="location" ></span>
-   	</h1>
-   </div>
+   <div class="container">
+    <div class="row">     
+      <div class="col-xs-12">
+       <h1 id="title-page">Погода в місті 
+           <span id="location"></span>         
+       </h1>
+     </div>
+    </div>
+ 
+ <!-- One day weather box -->
+   <div class="row">
+     <div class="col-xs-12">     
+       <table id="weather">
+         <tr>                  
+         </tr>
+       </table>  
+       <form id="formCity">
+        <input id="inputCityName" type="text" placeholder="Введіть назву міста" name="cityName"/>
+        <input type="button" id="btnGetWeather" class="btn btn-default" value=">"/>
+       </form>
+    </div>  
+  </div>
 
-  <form id="formCity" >
-    <label for="cityName">Введіть назву міста</label>
-    <input id="inputCityName" type="text" name="cityName"/>
-    <input type="button" id="btnGetWeather" value="Погода"/>
-  </form>
+<!--  Seven Day wether box -->
+ <div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-6">
+     
+    </div>
+    <div class="col-xs-4"></div>
 
-  <div class="weather-box">
-  	 <table id="weather">
-           <tr>
-          
-            
-           </tr>
-         </table>
+ </div>
     
 
-  </div>
- 
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  
+ <!-- Script place  -->
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
   <script src="js/weatherService.js"></script>
   <script src="js/weatherByCity.js"></script>
   <script src="js/script.js"></script>
+
  </body> 
 </html>

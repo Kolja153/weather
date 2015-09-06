@@ -1,23 +1,52 @@
-body {
+body{
 	background-image: url(/img/background.jpg);
 	background-size: 100%;
 	background-repeat: no-repeat;
-}
-
-form {
-	text-align: center;
-}
-
-label{
 	color: white;
-	margin: 10px;
 }
 
-.title-page{
-	text-align: center;
+td{
+	
+    font-size: 20px;
+	line-height: 2;
 	color: white;
-	margin-bottom: 5%;
 }
+
+input{
+	border-radius: 5px;
+	height: 30px;
+	
+}
+
+.row{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#title-page{
+	 text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+	width: 20em;
+    color:white;
+
+    font-family: 'Marck Script', cursive;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: type 5s steps(50, end);
+    animation: type 5s steps(50, end);
+
+}
+
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+
+}
+
 
 .global-box {
 	 width: 600px ;
@@ -25,30 +54,44 @@ label{
 	 margin-right: auto ;
 }
 
-.weather-box{
-	background-color: rgba(255, 255, 255, 0.59);
+.after:after {content:'_'}
+
+.day1
+{
+    width: 40em;
+    color:white;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Marck Script', cursive;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: type 5s steps(50, end);
+    animation: type 5s steps(50, end);
+}
+
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+
+#formCity{
+	margin-left: 57%;
+	margin-top: -7%;
+}
+
+#btnGetWeather{
+	margin-left: 5px;
+}
+
+#weather{
 	height: 300px;
 	width:  600px;
 	margin: auto;
 	margin-top: 5%;
-	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.31);
+	
+	border-radius: 10px;
 }
-.day{
-	color: black;
-	font-size: 20px;
-	line-height: 2;	
-}
-
-.temp{
-	color: black;
-	font-size: 20px;
-	line-height: 2;
-}
-
-.condition{
-	color: black;
-	font-size: 20px;
-	line-height: 2;
-}
-
-.after:after {content:'_'}
