@@ -77,6 +77,11 @@ input{
     from { width: 0; }
 }
 
+.img-day{
+	width: 200px;
+	margin-left: 50px;
+}
+
 #formCity{
 	margin-left: 57%;
 	margin-top: -7%;

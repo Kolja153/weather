@@ -37,7 +37,7 @@ $(function(){
     
      function addWeather(icon, day, condition, temp){
          var markup =
-         '<td>' + '<img src="img/icons/'+icon+'.png" />' + '</td>'+
+         '<td>' + '<img src="img/icons/'+icon+'.png" class="img-day" />' + '</td>'+
          '<td class="td">' + '<span class="day after"></span><br>'+
             '<span class="temp after"> </span>&#176C;<br>' +
             '<span class="condition after"></span>'+'</td>'
