@@ -18,18 +18,14 @@ $(function(){
         var offset = (new Date()).getTimezoneOffset()*60*1000; // Відхилення від UTC в секундах
         var city = data.city.name;
         var country = data.city.country;
+        var icon = data.list[0].weather[0].icon;
+        var temp = data.list[0].temp.day;
+        var condition = data.list[0].weather[0].description;
+        var localTime = data.list[0].dt*1000 - offset;
+
         $("#weatherTable tr:not(:first)").remove();
 
-        $.each(data.list, function(){
-            // "this" тримає об'єкт прогнозу звідси: http://openweathermap.org/forecast16
-            var localTime = new Date(this.dt*1000 - offset); // конвертуємо час з UTC у локальний
-            addWeather(
-                this.weather[0].icon,
-                moment(localTime).format('ll'),	// Використовуємо moment.js для представлення дати
-                this.weather[0].description,
-                Math.round(this.temp.day)
-            );
-        });
+          addWeather(icon,moment(localTime).format('ll'),condition,temp)
         $('#location').html('<b>'+city + '</b>');
          // Додаємо локацію на сторінку
     }
@@ -52,7 +48,6 @@ $(function(){
     function animatedText(el, text) {
         if (!text) { // Recursion exit condition
             $(el).removeClass('after');
-            $(el).append(text);
             return; 
         }
         $(el).append(text[0]);

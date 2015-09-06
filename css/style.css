@@ -18,13 +18,40 @@ input{
 	
 }
 
-.row{
-	margin-right: 0px;
-	margin-left: 0px;
+.after:after {content:' ...'}
+
+
+.img-day{
+	width: 200px;
+	margin-left: 50px;
+}
+
+#formCity{
+	margin-left: 600px;
+	margin-top: -5%;
+}
+
+#btnGetWeather{
+	margin-left: 5px;
+}
+
+#title{
+	background-color: rgba(0, 0, 0, 0.31);
+	border-radius: 10px;
+	padding-bottom: 5px;
+}
+
+#weather{
+	height: 300px;
+	width:  600px;
+	margin: auto;
+	margin-top: 8%;
+	background-color: rgba(0, 0, 0, 0.31);
+	border-radius: 10px;
 }
 
 #title-page{
-	 text-align: center;
+	text-align: center;
     margin-left: auto;
     margin-right: auto;
 	width: 20em;
@@ -47,56 +74,11 @@ input{
 
 }
 
-
-.global-box {
-	 width: 600px ;
-	 margin-left: auto ;
-	 margin-right: auto ;
-}
-
-.after:after {content:'_'}
-
-.day1
-{
-    width: 40em;
-    color:white;
-    font-size: 22px;
-    text-align: center;
-    font-family: 'Marck Script', cursive;
-    white-space:nowrap;
-    overflow:hidden;
-    -webkit-animation: type 5s steps(50, end);
-    animation: type 5s steps(50, end);
-}
-
-@keyframes type{
-    from { width: 0; }
-}
-
-@-webkit-keyframes type{
-    from { width: 0; }
-}
-
-.img-day{
-	width: 200px;
-	margin-left: 50px;
-}
-
-#formCity{
-	margin-left: 57%;
-	margin-top: -7%;
-}
-
-#btnGetWeather{
-	margin-left: 5px;
-}
-
-#weather{
-	height: 300px;
-	width:  600px;
-	margin: auto;
-	margin-top: 5%;
-	background-color: rgba(0, 0, 0, 0.31);
-	
+#footer{
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
 	border-radius: 10px;
+	height: 50px;
+	border-radius: 10px;
+	position: absolute;
 }
